@@ -1,0 +1,277 @@
+/* ═══════════════════════════════════════════════════════════
+   DashboardContent.css  –  Modern Dashboard Styles
+   Uses project design tokens from index.css
+   ═══════════════════════════════════════════════════════════ */
+
+.dashboard-content-wrapper {
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 2.5rem 0 5rem;
+}
+
+.dashboard-inner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ─── Stats Bar ──────────────────────────────────────────── */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+/* ─── Section Header ─────────────────────────────────────── */
+.section-header {
+  margin-bottom: 1.25rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.section-header p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ─── Map ─────────────────────────────────────────────────── */
+.map-container-box {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.leaflet-map {
+  width: 100%;
+  height: 480px;
+}
+
+.map-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.map-popup strong {
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.map-popup span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ─── Chart Card ──────────────────────────────────────────── */
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.chart-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.card-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: #eef2ff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.card-footnote {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ─── Dual Section (Pie + Line) ──────────────────────────── */
+.dual-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.dual-card {
+  min-width: 0; /* prevent recharts overflow */
+}
+
+/* ─── Tooltip (recharts) ─────────────────────────────────── */
+.chart-tooltip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  box-shadow: var(--shadow-lg);
+  font-family: 'Inter', sans-serif;
+}
+
+.chart-tooltip-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.35rem;
+}
+
+.chart-tooltip-row {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.15rem 0;
+}
+
+.chart-tooltip-row strong {
+  color: var(--text-main);
+}
+
+.chart-tooltip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── Pie Center Text ────────────────────────────────────── */
+.pie-center-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  fill: var(--text-main);
+}
+
+.pie-center-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  fill: var(--text-muted);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .dual-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content-wrapper {
+    padding: 1.5rem 0 3rem;
+  }
+
+  .dashboard-inner-container {
+    gap: 2rem;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1rem 1.15rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .leaflet-map {
+    height: 340px;
+  }
+
+  .chart-card {
+    padding: 1.25rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}

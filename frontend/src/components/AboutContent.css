@@ -1,0 +1,302 @@
+:root {
+  --about-text-main: #1a1a1a;
+  --about-bg-main: #ffffff;
+  --about-text-secondary: #4a4a4a;
+  --about-bg-card: #fdf8ec;
+  --about-btn-bg: #0f172a;
+  --about-btn-text: #ffffff;
+}
+
+.about-wrapper {
+  background-color: var(--about-bg-main);
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* 1. Hero Section */
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.about-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--about-text-main);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  color: var(--about-text-secondary);
+  line-height: 1.6;
+  max-width: 70%;
+  margin: 0 0 1rem 0;
+}
+
+.btn-contact-us {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--about-btn-bg);
+  color: var(--about-btn-text);
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-contact-us:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  background-color: #1e293b;
+}
+
+/* 2. Mission & Vision Bento Grid */
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.bento-item {
+  border-radius: 1.5rem;
+  padding: 3rem;
+  transition: all 0.3s ease;
+}
+
+.bento-mission, .bento-vision {
+  background-color: var(--about-bg-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-mission:hover, .bento-vision:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.bento-item h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--about-text-main);
+  margin: 0 0 1rem 0;
+}
+
+.bento-item p {
+  font-size: 1rem;
+  color: var(--about-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bento-img {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  min-height: 300px;
+}
+
+.bento-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.bento-img:hover img {
+  transform: scale(1.05);
+}
+
+/* 3. Klien Kami Section */
+.about-clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.clients-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--about-text-main);
+  margin: 0;
+}
+
+.clients-logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.client-logo {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo img {
+  max-height: 100%;
+  max-width: 150px;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
+}
+
+.client-logo img:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Additional styling for placeholder logos to look like logos */
+.placeholder-logo {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 120px;
+  height: 40px;
+}
+
+/* 4. Core Values Section */
+.about-values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.values-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--about-text-main);
+  margin: 0 0 0.5rem 0;
+}
+
+.values-header p {
+  color: var(--about-text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--about-bg-card);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.value-column {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.value-column.border-left {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.value-column h4 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--about-text-main);
+  margin: 0;
+}
+
+.value-column p {
+  font-size: 0.9rem;
+  color: var(--about-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .about-description {
+    max-width: 90%;
+  }
+  
+  .values-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .value-column.border-left {
+    border-left: none;
+  }
+  
+  /* Re-add border for grid layout 2x2 */
+  .value-column:nth-child(even) {
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .value-column:nth-child(n+3) {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-inner {
+    gap: 4rem;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .about-description {
+    max-width: 100%;
+  }
+  
+  .about-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-img {
+    min-height: 250px;
+  }
+  
+  /* Reorder items for mobile: Mission -> Img -> Img -> Vision */
+  .bento-mission { order: 1; }
+  .bento-img-top { order: 2; }
+  .bento-img-bottom { order: 3; }
+  .bento-vision { order: 4; }
+  
+  .clients-logo-container {
+    gap: 2rem;
+  }
+  
+  .values-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .value-column.border-left,
+  .value-column:nth-child(even),
+  .value-column:nth-child(n+3) {
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .value-column:first-child {
+    border-top: none;
+  }
+}

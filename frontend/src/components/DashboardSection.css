@@ -1,0 +1,91 @@
+.dashboard-section {
+  background-color: var(--surface-alt);
+}
+
+.dashboard-map-container {
+  padding: 3rem;
+  margin-bottom: 3rem;
+  background-color: var(--surface);
+}
+
+.map-header {
+  margin-bottom: 2rem;
+}
+
+.map-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+}
+
+.map-header p {
+  color: var(--text-muted);
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.map-tooltip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--surface);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-weight: 600;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  pointer-events: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.dashboard-chart-container {
+  padding: 3rem;
+  background-color: var(--surface);
+}
+
+.chart-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.chart-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.chart-header p {
+  color: var(--text-muted);
+}
+
+.chart-wrapper {
+  width: 100%;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .dashboard-map-container, .dashboard-chart-container {
+    padding: 1.5rem;
+  }
+  
+  .map-header h2 {
+    font-size: 2rem;
+  }
+}
