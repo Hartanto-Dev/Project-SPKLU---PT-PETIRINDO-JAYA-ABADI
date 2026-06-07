@@ -1,0 +1,516 @@
+/* ===== Register Page Layout ===== */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* ===== Animated Background ===== */
+.register-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.register-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: registerFloat 12s ease-in-out infinite;
+}
+
+.register-bg-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #059669, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.register-bg-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #4f46e5, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation-delay: -4s;
+}
+
+.register-bg-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #06b6d4, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -8s;
+}
+
+.register-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@keyframes registerFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+/* ===== Main Container ===== */
+.register-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+}
+
+/* ===== Left Branding Panel ===== */
+.register-branding {
+  flex: 1;
+  background: linear-gradient(160deg, #059669 0%, #0d9488 50%, #059669 100%);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-branding::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.register-branding::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -30%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(0,0,0,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.register-branding .branding-content {
+  position: relative;
+  z-index: 1;
+}
+
+.register-branding .branding-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.register-branding .branding-logo span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+.register-branding .branding-logo svg {
+  width: 36px;
+  height: 36px;
+}
+
+.register-branding .branding-headline {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.register-branding .text-gradient {
+  background: linear-gradient(135deg, #facc15, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.register-branding .branding-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.register-branding .branding-stats {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.register-branding .branding-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+
+.register-branding .branding-stat svg {
+  color: #facc15;
+  flex-shrink: 0;
+}
+
+.register-branding .branding-stat div {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-branding .branding-stat strong {
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+}
+
+.register-branding .branding-stat span {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+/* ===== Right Form Panel ===== */
+.register-form-panel {
+  flex: 1;
+  background: var(--surface, #ffffff);
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form-wrapper {
+  width: 100%;
+  max-width: 380px;
+}
+
+.register-form-wrapper .form-header {
+  margin-bottom: 1.75rem;
+}
+
+.register-form-wrapper .form-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.register-form-wrapper .form-header p {
+  font-size: 0.88rem;
+  color: var(--text-muted, #64748b);
+}
+
+/* ===== Alert Messages ===== */
+.register-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  animation: regSlideDown 0.3s ease;
+}
+
+@keyframes regSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.register-alert.alert-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.register-alert.alert-success svg {
+  color: #10b981;
+}
+
+.register-alert.alert-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.register-alert.alert-error svg {
+  color: #ef4444;
+}
+
+/* ===== Form Fields ===== */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.register-form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.register-form .form-field label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main, #374151);
+}
+
+.register-form .form-field label svg {
+  color: var(--text-muted, #9ca3af);
+}
+
+.register-form .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register-form .input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border, #e2e8f0);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-main, #0f172a);
+  background: var(--surface, #fff);
+  transition: all 0.2s ease;
+}
+
+.register-form .input-wrapper input:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3.5px rgba(5, 150, 105, 0.12);
+}
+
+.register-form .input-wrapper input::placeholder {
+  color: #cbd5e1;
+}
+
+.register-form .input-wrapper input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-form .field-error .input-wrapper input {
+  border-color: #ef4444;
+}
+
+.register-form .field-error .input-wrapper input:focus {
+  box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.1);
+}
+
+.register-form .field-error-text {
+  font-size: 0.75rem;
+  color: #ef4444;
+  font-weight: 500;
+  padding-left: 0.1rem;
+  animation: regSlideDown 0.2s ease;
+}
+
+/* Toggle password visibility */
+.register-form .toggle-password {
+  position: absolute;
+  right: 0.65rem;
+  background: none;
+  border: none;
+  color: var(--text-muted, #9ca3af);
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.register-form .toggle-password:hover {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.06);
+}
+
+/* ===== Submit Button ===== */
+.register-submit-btn {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.35);
+  margin-top: 0.25rem;
+}
+
+.register-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #047857, #0f766e);
+  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.5);
+  transform: translateY(-2px);
+}
+
+.register-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.register-submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.register-submit-btn.loading {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+}
+
+/* Spinner */
+.register-form-wrapper .spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: regSpin 0.7s linear infinite;
+}
+
+@keyframes regSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Divider ===== */
+.register-form-wrapper .form-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.register-form-wrapper .form-divider::before,
+.register-form-wrapper .form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border, #e2e8f0);
+}
+
+.register-form-wrapper .form-divider span {
+  font-size: 0.78rem;
+  color: var(--text-muted, #9ca3af);
+  font-weight: 500;
+}
+
+/* ===== Footer Text ===== */
+.register-form-wrapper .form-footer-text {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted, #64748b);
+}
+
+.login-link {
+  color: #059669;
+  font-weight: 700;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+    max-width: 480px;
+    min-height: unset;
+  }
+
+  .register-branding {
+    padding: 2rem 1.75rem;
+  }
+
+  .register-branding .branding-headline {
+    font-size: 1.6rem;
+  }
+
+  .register-branding .branding-desc {
+    font-size: 0.82rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .register-branding .branding-stats {
+    gap: 0.65rem;
+  }
+
+  .register-branding .branding-stat {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .register-branding .branding-stat strong {
+    font-size: 0.88rem;
+  }
+
+  .register-form-panel {
+    padding: 2rem 1.75rem;
+  }
+
+  .register-form-wrapper .form-header h2 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 0.5rem;
+  }
+
+  .register-container {
+    border-radius: 18px;
+  }
+
+  .register-branding .branding-stats {
+    flex-wrap: wrap;
+  }
+}

@@ -140,7 +140,7 @@ const LoginContent = () => {
             </form>
 
             <div className="form-divider"><span>atau</span></div>
-            <p className="form-footer-text">Belum punya akun? <Link to="#" className="signup-link">Daftar Sekarang</Link></p>
+            <p className="form-footer-text">Belum punya akun? <Link to="/register" className="signup-link">Daftar Sekarang</Link></p>
 
             <div className="demo-hint">
               <strong>User:</strong> user12345@gmail.com / user12345<br />

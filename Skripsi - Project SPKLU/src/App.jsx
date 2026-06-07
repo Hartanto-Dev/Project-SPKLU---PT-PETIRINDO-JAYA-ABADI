@@ -8,13 +8,14 @@ import DashboardPage from './pages/DashboardPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import UserManagementPage from './pages/UserManagementPage';
 import EditProfilePage from './pages/EditProfilePage';
 import SettingsPage from './pages/SettingsPage';
 
 // Pages that show full-screen without navbar/footer
-const FULLSCREEN_PAGES = ['/login'];
+const FULLSCREEN_PAGES = ['/login', '/register'];
 
 const AppLayout = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const AppLayout = () => {
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
         <Route path="/admin/users" element={<UserManagementPage />} />
         <Route path="/profile" element={<EditProfilePage />} />
