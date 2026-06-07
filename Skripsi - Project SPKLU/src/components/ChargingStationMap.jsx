@@ -136,17 +136,22 @@ function FlyToStation({ lat, lng, zoom }) {
 function MapResizeController() {
   const map = useMap();
   React.useEffect(() => {
+    // Multiple invalidateSize calls to handle layout settling on mobile
     map.invalidateSize();
-    const timer = setTimeout(() => {
-      map.invalidateSize();
-    }, 500);
+    const timer1 = setTimeout(() => map.invalidateSize(), 100);
+    const timer2 = setTimeout(() => map.invalidateSize(), 500);
+    const timer3 = setTimeout(() => map.invalidateSize(), 1500);
     const handleResize = () => {
       map.invalidateSize();
+      // Also re-invalidate after a short delay on resize
+      setTimeout(() => map.invalidateSize(), 200);
     };
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
-      clearTimeout(timer);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
     };
   }, [map]);
   return null;
