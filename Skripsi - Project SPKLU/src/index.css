@@ -61,6 +61,18 @@ img {
   display: block;
 }
 
+/* Fix: Leaflet tiles need their own sizing, override global img rule */
+.leaflet-container img {
+  max-width: none !important;
+  height: auto;
+  display: block;
+}
+
+.leaflet-tile {
+  width: 256px !important;
+  height: 256px !important;
+}
+
 /* Utility Classes */
 .container {
   width: 100%;
