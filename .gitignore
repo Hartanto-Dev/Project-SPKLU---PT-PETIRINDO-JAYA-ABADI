@@ -1,23 +1,9 @@
-# Dependency directories
+# Dependencies
 node_modules/
-frontend/node_modules/
 
-# Build outputs
+# Build output
 dist/
-frontend/dist/
-frontend/dist-ssr/
-
-# Temp files
-temp_downloaded_file
-temp_downloaded_file*
-
-# Local env files
-.env
-.env.local
-.env.*.local
-frontend/.env
-frontend/.env.local
-frontend/.env.*.local
+dist-ssr/
 
 # Logs
 logs
@@ -28,8 +14,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Local env files
+*.local
+
 # Editor directories and files
-.vscode/
+.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -38,3 +27,8 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

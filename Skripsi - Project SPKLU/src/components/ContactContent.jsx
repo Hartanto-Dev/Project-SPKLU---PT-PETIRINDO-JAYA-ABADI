@@ -35,21 +35,21 @@ const ContactContent = () => {
                 <div className="detail-icon"><Phone size={20} /></div>
                 <div className="detail-text">
                   <h4>Call Center</h4>
-                  <p>+62 812 3456 7890</p>
+                  <p>+62 812 1574 4542</p>
                 </div>
               </div>
               <div className="detail-item">
                 <div className="detail-icon"><MapPin size={20} /></div>
                 <div className="detail-text">
                   <h4>Our Location</h4>
-                  <p>Jl. Kaput No.11, Jatimakmur, Bekasi</p>
+                  <p>Jl. Kaput Raya No. 8, Jatimakmur, Bekasi</p>
                 </div>
               </div>
               <div className="detail-item">
                 <div className="detail-icon"><Mail size={20} /></div>
                 <div className="detail-text">
                   <h4>Email</h4>
-                  <p>hello@poseidon.id</p>
+                  <p>cs@petir-indonesia.co.id</p>
                 </div>
               </div>
               <div className="detail-item">

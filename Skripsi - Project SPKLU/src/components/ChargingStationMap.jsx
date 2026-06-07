@@ -132,6 +132,26 @@ function FlyToStation({ lat, lng, zoom }) {
   return null;
 }
 
+// Helper: force invalidate size on mount and resize
+function MapResizeController() {
+  const map = useMap();
+  React.useEffect(() => {
+    map.invalidateSize();
+    const timer = setTimeout(() => {
+      map.invalidateSize();
+    }, 500);
+    const handleResize = () => {
+      map.invalidateSize();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
+  }, [map]);
+  return null;
+}
+
 // Normalize power to kW display
 function formatPower(power) {
   if (!power || power === 0) return '–';
@@ -194,7 +214,7 @@ const StationDetailPanel = ({ station, onClose, onSelectStation }) => {
   // Compute occupancy status
   const status = useMemo(() => generateStationStatus(station), [station]);
   const isFull = status.freeSlots === 0;
-  const alternatives = useMemo(() => isFull ? getNearestAlternatives(station, 3) : [], [isFull, station]);
+  const alternatives = useMemo(() => getNearestAlternatives(station, 3), [station]);
 
   return (
     <div className="station-detail-overlay" onClick={onClose}>
@@ -258,11 +278,11 @@ const StationDetailPanel = ({ station, onClose, onSelectStation }) => {
             </div>
           )}
 
-          {/* ── ALTERNATIVES WHEN FULL ── */}
-          {isFull && alternatives.length > 0 && (
+          {/* ── ALTERNATIVES / RECOMMENDATIONS ── */}
+          {alternatives.length > 0 && (
             <div className="alternatives-section">
               <div className="alternatives-title">
-                <ThumbsUp size={14} /> SPKLU Terdekat yang Tersedia
+                <ThumbsUp size={14} /> {isFull ? 'SPKLU Terdekat yang Tersedia' : 'SPKLU Terdekat Lainnya'}
               </div>
               {alternatives.map((alt, idx) => {
                 const altStatus = generateStationStatus(alt);
@@ -590,6 +610,7 @@ const ChargingStationMap = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
+              <MapResizeController />
               {flyTarget && <FlyToStation lat={flyTarget.lat} lng={flyTarget.lng} key={flyTarget.key} />}
               {mapMarkers.map((station, idx) => (
                 <Marker key={`${station.lat}-${station.lng}-${idx}`} position={[station.lat, station.lng]}>

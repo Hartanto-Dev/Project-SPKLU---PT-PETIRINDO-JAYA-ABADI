@@ -128,6 +128,10 @@
 }
 
 @media (max-width: 768px) {
+  .footer-top {
+    gap: 2rem;
+  }
+
   .footer-links-grid {
     gap: 2rem;
   }
@@ -139,5 +143,15 @@
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-column {
+    min-width: 100%;
+  }
+  
+  .footer-links-grid {
+    gap: 1.5rem;
   }
 }

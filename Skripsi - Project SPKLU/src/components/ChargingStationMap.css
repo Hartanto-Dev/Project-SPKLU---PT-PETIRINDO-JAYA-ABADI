@@ -780,23 +780,44 @@
   .map-container-wrapper {
     flex-direction: column-reverse;
     height: auto;
-    min-height: 90vh;
+    min-height: 85vh;
   }
   
   .map-sidebar {
     width: 100%;
     min-width: unset;
-    height: 50vh;
+    height: 55vh;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
   }
   
   .map-view {
-    height: 45vh;
+    height: 40vh;
   }
 
+  /* Keep filters side-by-side to save valuable vertical space on mobile */
   .filter-row {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  /* Make header and filters compact on mobile to make room for the list */
+  .sidebar-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .sidebar-filters {
+    padding: 0.75rem 1rem;
     gap: 0.5rem;
+  }
+
+  .sidebar-list-header {
+    padding: 0.5rem 1rem;
+  }
+
+  /* Restrict the station list max height so it behaves correctly in 55vh container */
+  .station-list {
+    max-height: 240px;
+    padding: 0 0.75rem 0.75rem 0.75rem;
   }
 
   .station-detail-panel {
