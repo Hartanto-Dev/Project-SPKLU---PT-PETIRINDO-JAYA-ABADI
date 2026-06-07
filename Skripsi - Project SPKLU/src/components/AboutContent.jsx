@@ -52,7 +52,7 @@ const AboutContent = () => {
               <img src="https://www.kindpng.com/picc/m/120-1207645_logo-pln-pln-indonesia-hd-png-download.png" alt="Logo PLN Mobile" />
             </div>
             <div className="client-logo">
-              <img src="https://e7.pngegg.com/pngimages/822/761/png-clipart-ministry-of-environment-and-forestry-natural-environment-direktorat-jenderal-perhutanan-sosial-dan-kemitraan-lingkungan-natural-environment-leaf-logo.png" alt="Logo PT Petirindo Jaya Abadi" className="placeholder-logo" />
+              <img src="/logo-petirindo.png" alt="Logo PT Petirindo Jaya Abadi" />
             </div>
             <div className="client-logo">
               <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?w=300&q=80&auto=format&fit=crop" alt="Logo PT Integra Automa Solusi" className="placeholder-logo" />
