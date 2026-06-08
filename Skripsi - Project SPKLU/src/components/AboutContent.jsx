@@ -55,11 +55,14 @@ const AboutContent = () => {
               <img src="/logo-petirindo.png" alt="Logo PT Petirindo Jaya Abadi" />
             </div>
             <div className="client-logo">
-              <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?w=300&q=80&auto=format&fit=crop" alt="Logo PT Integra Automa Solusi" className="placeholder-logo" />
+              <img src="/images/klien/logo-nindya.png" alt="Logo PT Nindya Karya" />
             </div>
             <div className="client-logo">
-              <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=300&q=80&auto=format&fit=crop" alt="Logo PT Bailey Safiri Mandiri" className="placeholder-logo" />
+              <img src="/images/klien/logo-klhk.png" alt="Logo Kementerian Lingkungan Hidup dan Kehutanan" />
             </div>
+            {/* <div className="client-logo">
+              <img src="/images/klien/logo-metland.png" alt="Logo PT Metropolitan Land Tbk (Metland)" />
+            </div> */}
           </div>
         </section>
 
@@ -84,11 +87,13 @@ const AboutContent = () => {
             </div>
             <div className="value-column border-left">
               <h4>Collaboration</h4>
-              <p>We grow by building strong partnerships with brands, telcos, and creators.</p>
+              <p>Bawa bisnis Anda selangkah lebih maju. Kami membuka ruang kolaborasi bagi pengembang properti, pengelola kawasan, hingga instansi untuk 
+                bersinergi mewujudkan ekosistem kendaraan listrik yang terintegrasi dan saling menguntungkan.</p>
             </div>
             <div className="value-column border-left">
               <h4>Trust</h4>
-              <p>Security, transparency, and fairness guide every reward we deliver.</p>
+              <p>Keamanan dan kenyamanan Anda adalah prioritas utama. Dengan perangkat SPKLU berstandar tinggi dan sistem pengelolaan yang transparan
+                , kami berkomitmen memberikan layanan yang dapat diandalkan oleh mitra maupun pengguna.</p>
             </div>
           </div>
         </section>

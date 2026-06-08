@@ -163,13 +163,6 @@
   filter: grayscale(0%) opacity(1);
 }
 
-/* Additional styling for placeholder logos to look like logos */
-.placeholder-logo {
-  border-radius: 8px;
-  object-fit: cover;
-  width: 120px;
-  height: 40px;
-}
 
 /* 4. Core Values Section */
 .about-values {

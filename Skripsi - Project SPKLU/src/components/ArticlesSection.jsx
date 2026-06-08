@@ -5,17 +5,19 @@ import './ArticlesSection.css';
 const articlesData = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop',
+    image: '/images/artikel-1.jpg',
     title: 'Kenalan Sama Kendaraan Listrik, Apa Saja Untungnya?',
     category: 'Technology',
-    date: 'April 22, 2026'
+    date: 'April 22, 2026',
+    link: 'https://www.roojai.co.id/article/kendaraan/ketahui-7-keuntungan-membeli-mobil-listrik/'
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+    image: '/images/artikel-2.jpg',
     title: 'Merawat Baterai Mobil Listrik Agar Awet Bertahun-Tahun',
     category: 'Backend',
-    date: 'April 20, 2026'
+    date: 'April 20, 2026',
+    link: 'https://wuling.id/id/blog/lifestyle/8-cara-merawat-baterai-mobil-listrik-agar-selalu-awet'
   }
 ];
 
@@ -34,7 +36,12 @@ const ArticlesSection = () => {
               <div className="article-content">
                 <span className="article-date">{article.date}</span>
                 <h3 className="article-title">{article.title}</h3>
-                <a href="#" className="article-link">
+                <a 
+                  href={article.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="article-link"
+                >
                   Read More <ArrowRight size={16} />
                 </a>
               </div>

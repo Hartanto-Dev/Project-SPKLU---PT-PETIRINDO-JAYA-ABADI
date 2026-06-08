@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="footer-logo">
               <PetirindoLogo size={34} />
-              <span className="logo-text">PETIRINDO</span>
+              <span className="logo-text">PETIRINDO SPKLU</span>
             </div>
             <p className="footer-description">
               Building the future of web applications with modern design and powerful functionality.
